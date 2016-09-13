@@ -2,7 +2,9 @@
 
 require_once 'config.php';
 
-$query = 'SELECT * FROM os';
+$num = $_GET['num'];
+
+$query = 'select * from os WHERE numero='.$num;
 
 $resultado = $db->query($query);
 
