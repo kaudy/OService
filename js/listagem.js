@@ -118,9 +118,3 @@ function formataDataBr(data)
     var dataAux = data.slice(1,10).split('-');    
     return dataAux[2]+'/'+dataAux[1]+'/'+dataAux[0]+data.slice(10);
 }
-
-
-
-
-
-
