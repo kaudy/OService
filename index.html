@@ -7,6 +7,7 @@
         <script src="js/bootstrap.js" type="text/javascript"></script>
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>        
         <script src="js/listagem.js" type="text/javascript"></script>
+        <script src="js/criar.js" type="text/javascript"></script>
     </head>
     <body>
         <!-- Static navbar -->
@@ -103,16 +104,17 @@
                         <h4 class="modal-title" id="myModalLabel">Abrir Nova Ordem de Serviço <span class="campo-numero"></span></h4>
                     </div>
                     <div class="modal-body">
-                        <form class="form-horizontal">
+                        <div id="alerta-form" class="alert alert-danger hide" role="alert">Erro ao tentar salvar a OS</div>
+                        <form id="form-criar" class="form-horizontal">
                             <fieldset>
                                 <!-- Select Basic -->
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label" for="destino">Departamento</label>
+                                    <label class="col-md-3 control-label" for="departamento">Departamento</label>
                                     <div class="col-md-8">
-                                        <select id="destino" name="destino" class="form-control">
-                                            <option value="1">Manutenção</option>
-                                            <option value="2">Costureira</option>
-                                            <option value="3">TI</option>
+                                        <select id="departamento" name="departamento" class="form-control">
+                                            <option value="Manutenção">Manutenção</option>
+                                            <option value="Costureira">Costureira</option>
+                                            <option value="TI">TI</option>
                                         </select>
                                     </div>
                                 </div>

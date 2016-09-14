@@ -1,47 +1,7 @@
 
 $(document).ready(function ()
 { 
-    $.getJSON('/model/listar-os.php',function(dados)
-    {
-      for(os in dados)
-      {
-	var objDados = 
-	{
-          numero: dados[os].numero,
-	  solicitante: dados[os].solicitante,
-	  data: dados[os].data,
-	  departamento: dados[os].departamento,
-	  status: dados[os].status,
-          solicitacao: dados[os].solicitacao
-	}	
-        
-	addRegistro(objDados);        
-      } 
-    });
-    
-    //Quando abrir o modal #modal-abrir limpa os campos e remove a classe has-error
-    $('#modal-abrir').on('show.bs.modal',function()
-    {
-        $('#modal-abrir .modal-body .form-group').removeClass('has-error');
-        $('#solicitante').val('');
-        $('#solicitacao').val('');
-    }); 
-    
-    //Ao clicar no botão btn-criar valida os campos e caso valor seja vazio 
-    // adiciona a classe de erro .has-error ao form-group
-    $('#btn-criar').click(function()
-    {
-        $('#modal-abrir .modal-body .form-group').removeClass('has-error');
-        
-        if($('#solicitante').val()=='')
-        {
-            $('#solicitante').parent().parent().addClass('has-error');
-        }
-        if($('#solicitacao').val()=='')
-        {            
-            $('#solicitacao').parent().parent().addClass('has-error');
-        }     
-    });
+    carregaOS();
 });
 
 //==============================================================================
@@ -117,4 +77,27 @@ function formataDataBr(data)
 {
     var dataAux = data.slice(1,10).split('-');    
     return dataAux[2]+'/'+dataAux[1]+'/'+dataAux[0]+data.slice(10);
+}
+
+
+function carregaOS()
+{
+    $('#lista-os tbody').empty();
+    $.getJSON('/model/listar-os.php',function(dados)
+    {
+      for(os in dados)
+      {
+	var objDados = 
+	{
+          numero: dados[os].numero,
+	  solicitante: dados[os].solicitante,
+	  data: dados[os].data,
+	  departamento: dados[os].departamento,
+	  status: dados[os].status,
+          solicitacao: dados[os].solicitacao
+	}	
+        
+	addRegistro(objDados);        
+      } 
+    });
 }
