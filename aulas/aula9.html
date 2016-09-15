@@ -1,0 +1,106 @@
+<html>
+  <head>
+    <title>Agenda</title>
+    <meta charset="utf-8"/> 
+    <style>
+      table
+      {
+	border: 1 solid black;
+	width: 500px;
+      }
+      fieldset
+      {
+	width: 470px;
+      }
+      label
+      {
+	width: 100px;
+	
+      }
+      td
+      {
+	text-align: center;
+      }      
+    </style>    
+  </head>
+  <body> 
+    <fieldset>
+      <legend>Adicionar Contato</legend>      
+	<label>Nome:</label><input type='text' id='nome'><br>
+	<label>Telefone:</label><input type='text' id='telefone'><br>
+	<button type="button" onclick="add()">Adicionar</button>	
+    </fieldset>    
+    <table>
+      <thead>
+	<tr>
+	  <th>
+	    Nome
+	  </th>
+	  <th>
+	    Telefone
+	  </th>
+	  <th>
+	    Cor
+	  </th>
+	</tr>
+      </thead>
+      <tbody id="registros">	
+      </tbody>
+    </table>
+  </body>
+</html>
+<script >
+
+  function add()
+  {
+    var registros = document.getElementById('registros');
+    var nome = document.getElementById('nome');
+    var telefone = document.getElementById('telefone');
+    var novo='<td>'
+	      +nome.value
+	      +'</td>'
+	      +'<td>'
+	      +telefone.value
+	      +'</td>'
+	      +'<td style="background-color:'+cor()+'">'
+	      +'</td>';
+	      
+    var novoEl = document.createElement("tr");
+    novoEl.innerHTML= novo;
+    novoEl.style.backgroundColor = cor();
+    
+	      
+	      
+    registros.appendChild(novoEl);
+    nome.value		='';
+    telefone.value	='';    
+  }
+  
+  
+  
+
+  function cor()
+  {
+    var numeroR = Math.floor(Math.random()*255);
+    var numeroG = Math.floor(Math.random()*255);
+    var numeroB = Math.floor(Math.random()*255);
+    
+    return 'rgb('+numeroR+','+numeroG+','+numeroB+')';
+    
+    
+  }
+  
+  
+
+
+
+
+
+
+
+
+</script>
+
+
+
+

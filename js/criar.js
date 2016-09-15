@@ -6,8 +6,7 @@ $(document).ready(function ()
     {
         $('#modal-abrir .modal-body .form-group').removeClass('has-error');
         $('#alerta-form').addClass('hide');
-        $('#alerta-form').html('');
-        $('#solicitante').val('');
+        $('#alerta-form').html('');        
         $('#solicitacao').val('');
     }); 
     
@@ -18,13 +17,8 @@ $(document).ready(function ()
         $('#modal-abrir .modal-body .form-group').removeClass('has-error');
         $('#alerta-form').addClass('hide');
         $('#alerta-form').html('');
-        var valido=true;
+        var valido=true;        
         
-        if($('#solicitante').val()=='')
-        {
-            $('#solicitante').parent().parent().addClass('has-error');
-            valido=false;
-        }
         if($('#solicitacao').val()=='')
         {            
             $('#solicitacao').parent().parent().addClass('has-error');
@@ -36,7 +30,6 @@ $(document).ready(function ()
         {
             var dados=
                 {
-                    solicitante: $('#solicitante').val(),
                     solicitacao: $('#solicitacao').val(),
                     departamento: $('#departamento').val()
                 };

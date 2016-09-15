@@ -2,7 +2,7 @@
 
 require_once 'config.php';
 
-$solicitante = $_POST['solicitante'];
+$solicitante = $_SESSION['usuario']['nome'];
 $departamento =$_POST['departamento'];
 $solicitacao = $_POST['solicitacao'];
 

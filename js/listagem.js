@@ -2,6 +2,13 @@
 $(document).ready(function ()
 { 
     carregaOS();
+    
+    $('#logout').click(function ()
+    {
+        //seta data do cookie da sessao para expirar e redireciona novamente para login.html
+        document.cookie = "os-login=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+        location.href='login.html'; 
+    });
 });
 
 //==============================================================================

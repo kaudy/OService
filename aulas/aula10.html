@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>Agenda</title>
+    <meta charset="utf-8"/> 
+    <style>         
+    </style>    
+  </head>
+  <body>   
+    <input type="range" id="rangeblue" min="0" max="255" step="1" value="0" onchange="geraCor()"/>
+    <table id="tabelaCor">
+    <tr>
+    </tr>
+    </table>
+  </body>
+</html>
+<script>
+geraCor();
+
+function geraCor()
+{
+  
+  var tabelaCor = document.getElementById('tabelaCor');
+  tabelaCor.innerHTML="";
+  var dados='';
+  var numeroR=0;
+  var numeroG=0;
+  var numeroB= document.getElementById('rangeblue').value;
+
+  for(var coluna=0;coluna<30;coluna++)
+  {
+    var novoTR = document.createElement("tr");
+    tabelaCor.appendChild(novoTR);
+    
+    for(var linhas=0;linhas<70;linhas++)
+    {
+      var novoTD = document.createElement("td");  
+      novoTD.style.width = "10";
+      novoTD.style.height= "10";
+      novoTD.style.backgroundColor = 'rgb('+numeroR+','+numeroG+','+numeroB+')';
+      tabelaCor.appendChild(novoTD);      
+    }
+    numeroR+=10;
+  }
+  numeroG+=10;
+}
+
+
+
+</script>

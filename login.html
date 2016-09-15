@@ -7,8 +7,7 @@
         <script src="js/bootstrap.js" type="text/javascript"></script>
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>        
         <link href="css/login.css" rel="stylesheet" type="text/css"/>
-        <script src="js/listagem.js" type="text/javascript"></script>
-        <script src="js/criar.js" type="text/javascript"></script>
+        <script src="js/login.js" type="text/javascript"></script>
     </head>
     <body>
         <div class="container">
@@ -18,9 +17,10 @@
                     <div class="account-wall">
                         <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
                              alt="">
-                        <form class="form-signin">
-                            <input type="text" class="form-control" placeholder="Usuario" required autofocus>
-                            <input type="password" class="form-control" placeholder="Senha" required>
+                        <form id="form-login" class="form-signin">
+                            <div id="alerta-form" class="alert alert-danger hide" role="alert"></div>
+                            <input type="text" id="login" class="form-control" placeholder="Usuario" required autofocus>
+                            <input type="password" id="senha" class="form-control" placeholder="Senha" required>
                             <button class="btn btn-lg btn-primary btn-block" type="submit">
                                 Entrar</button>
                             <label class="checkbox pull-left">

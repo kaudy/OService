@@ -1,0 +1,23 @@
+[
+{
+  "nome":"Capiroto dos Santos",
+  "cpf": "123.456.789-66",
+  "telefone":"41-9999-6666",
+  "sexo":"H",
+  "datanasc":"06/06/1666"
+},
+{
+  "nome":"Jesus dos Santos",
+  "cpf": "123.456.789-66",
+  "telefone":"41-9999-6666",
+  "sexo":"H",
+  "datanasc":"06/06/1666"
+},
+{
+  "nome":"Zebu de Jesus",
+  "cpf": "123.456.789-66",
+  "telefone":"41-9999-6666",
+  "sexo":"H",
+  "datanasc":"06/06/1666"
+}
+]

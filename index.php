@@ -1,3 +1,14 @@
+<?php
+    require_once './model/config.php';   
+    
+    $logado = isset($_SESSION['usuario']);
+    
+    if($logado !=true)
+    {
+        header('Location: /login.html');
+    }
+
+?>
 <html>
     <head>
         <title>TODO supply a title</title>
@@ -24,9 +35,14 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.html">Listar</a></li>
-                        <li><a href="#" data-toggle="modal" data-target="#modal-abrir">Abrir</a></li>                                   
-                    </ul>          
+                        <li class="active"><a href="index.php">Listar</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#modal-abrir">Abrir</a></li>                          
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a id="logout" href="#">Logout </a>
+                        </li>
+                    </ul>
                 </div><!--/.nav-collapse -->
             </div>
         </nav>
@@ -118,16 +134,7 @@
                                         </select>
                                     </div>
                                 </div>
-
-                                <!-- Text input-->
-                                <div class="form-group">
-                                    <label class="col-md-3 control-label" for="solicitante">Solicitante</label>  
-                                    <div class="col-md-8">
-                                        <input id="solicitante" name="solicitante" type="text" placeholder="Nome do Solicitante" class="form-control input-md">
-
-                                    </div>
-                                </div>
-
+                                
                                 <!-- Textarea -->
                                 <div class="form-group">
                                     <label class="col-md-3 control-label" for="solicitacao">Solicitação</label>

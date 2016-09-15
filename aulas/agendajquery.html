@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>Agenda</title>
+    <meta charset="utf-8"/> 
+    <script type="text/javascript" src="jquerymin.js"></script>
+    <script type="text/javascript" src="contatos.js"></script>
+    <script type="text/javascript" src="agendajquery.js"></script>
+    
+    <style>
+      table
+      {
+	border: 1 solid black;
+	width: 500px;
+      }
+      fieldset
+      {
+	width: 470px;
+      }
+      label
+      {
+	width: 100px;	
+      }
+      td
+      {
+	text-align: center;
+      }      
+    </style>    
+  </head>
+  <body> 
+    <fieldset>
+      <legend>Adicionar Contato</legend>      
+	<label>Nome:</label><input type='text' id='nome'><br>
+	<label>Telefone:</label><input type='text' id='telefone'><br>
+	<button type="button" id="enviar">Adicionar</button>	
+    </fieldset>    
+    <table>
+      <thead>
+	<tr>
+	  <th>
+	    Nome
+	  </th>
+	  <th>
+	    Telefone
+	  </th>
+	  <th>
+	    Cor
+	  </th>
+	  <th>
+	    Remover
+	  </th>
+	</tr>
+      </thead>
+      <tbody id="registros">	
+      </tbody>
+    </table>
+  </body>
+</html>

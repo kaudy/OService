@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title>Aula 11</title>
+    <meta charset="utf-8"/>
+    <script type="text/javascript" src="jquerymin.js"></script>
+    <script type="text/javascript" src="aula11.js"></script>
+    <style>
+      .erro input
+      {
+	box-shadow: 1px solid red;
+	border: 1px solid rgba(255,0,0,.2);
+	background-color: rgba(255,0,0,.2);
+      }      
+      .erro span
+      {
+	color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="Titulo">Eventos</h1>
+    <div>
+      <h3>Cidades</h3>
+      <ul id="listacidades">
+	<li>
+	  Curitiba - PR
+	</li>
+	<li>
+	  Florianopolis - SC
+	</li>
+	<li>
+	  Colombo - PR
+	</li>
+	<li>
+	  Ourinhos - SP
+	</li>
+      </ul>
+    </div>
+    <form id="formulario"> 
+      <div>
+	<input type="text" id="cidade" placeholder="Cidade"/>
+      </div>      
+      <select id="cores">
+	<option>red</option>
+	<option>gold</option>
+	<option>blue</option>
+	<option>green</option>
+      </select>
+      <br>
+      <input type="checkbox" id="ok"/>
+      <br>
+      <button id="enviar" type="submit">Enviar</button>    
+    </form>
+  </body>
+ </html>
