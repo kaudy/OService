@@ -20,8 +20,14 @@ $(document).ready(function()
                 $('#alerta-form').removeClass('hide');
                 $('#alerta-form').html(status.msg);
             }else
-            {                
-                location.href='index.php';              
+            {   
+                if(status.tipo=='admin')
+                {
+                    location.href='admin.php';
+                }else
+                {
+                    location.href='index.php';
+                }
             }
             
         });       

@@ -65,12 +65,15 @@ function verificaStatus(status)
     if(status=='Aberta')
     {
         return '<span class="label label-success">Aberta</span>';
-    }else if(status=='Pendente')
+    }else if(status=='Execução')
     {
-        return '<span class="label label-warning">Pendente</span>';
-    }else if(status=='Fechado')
+        return '<span class="label label-warning">Execução</span>';
+    }else if(status=='Fechada')
     {
         return '<span class="label label-default">Fechado</span>';
+    }else if(status=='Nova')
+    {
+        return '<span class="label label-info">Nova</span>';
     }else
     {
         return '<span class="label label-danger">'+status+'</span>';
@@ -87,10 +90,10 @@ function formataDataBr(data)
 }
 
 
-function carregaOS()
+function carregaOS(filtro)
 {
     $('#lista-os tbody').empty();
-    $.getJSON('/model/listar-os.php',function(dados)
+    $.getJSON('/model/listar-os.php',filtro,function(dados)
     {
       for(os in dados)
       {
