@@ -1,22 +1,18 @@
-<?php 
-
+<?php
 require_once './model/config.php';
 
-$logado=  isset($_SESSION['usuario']);
+$logado = isset($_SESSION['usuario']);
 
-if($logado!=true)
-{
+if ($logado != true) {
     header('Location: /login.html');
 }
 
 $tipo = $_SESSION['usuario']['tipo'];
 
-if($tipo != 'admin')
-{
+if ($tipo != 'admin') {
     echo "Voce não tem permissão para acessar";
     exit();
 }
-
 ?>
 <html>
     <head>
@@ -92,11 +88,82 @@ if($tipo != 'admin')
                                     <th>Data de Solicitação</th>
                                     <th>Departamento</th>
                                     <th>Status</th>
+                                    <th>Remover</th>
                                 </tr>
                             </thead>
                             <tbody>                                                               
                             </tbody>
                         </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="modal-os" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Ordem de Serviço <span class="campo-numero"></span></h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="alerta-form" class="alert alert-danger hide" role="alert"></div>
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Solicitante</label>
+                                <div class="col-sm-8">
+                                    <p class="form-control-static campo-solicitante" ></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Data de Registro</label>
+                                <div class="col-sm-8">
+                                    <p class="form-control-static campo-data"></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Data de Alteração</label>
+                                <div class="col-sm-8">
+                                    <p class="form-control-static campo-data-alteracao"></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Departamento</label>
+                                <div class="col-sm-8">
+                                    <p class="form-control-static campo-departamento"></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Solicitação</label>
+                                <div class="col-sm-8">
+                                    <p class="form-control-static campo-solicitacao"></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Status</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control campo-status">
+                                        <option value="Todos">Todos</option>
+                                        <option value="Nova">Nova</option>
+                                        <option value="Aberta">Aberta</option>
+                                        <option value="Fechada">Fechada</option>
+                                        <option value="Execução">Execução</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Comentário</label>
+                                <div class="col-sm-8">                                    
+                                    <textarea class="form-control campo-novo-comentario"></textarea>
+                                    <p class="form-control-static campo-comentario"></p>                                    
+                                </div>
+                            </div>                            
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-success" id="btn-salvar">Salvar</button>                        
                     </div>
                 </div>
             </div>

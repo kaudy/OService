@@ -45,11 +45,14 @@ var abreOs = function()
     var os = {'num': $(this).attr('os-num')};
     $.getJSON('/model/exibir-os.php',os,function(dados)
     {
-        $('#modal-os .campo-numero').html('#'+dados[0].numero);
+        $('#modal-os .campo-numero').html(dados[0].numero);
         $('#modal-os .campo-solicitante').html(dados[0].solicitante);
         $('#modal-os .campo-data').html(dados[0].data);
         $('#modal-os .campo-departamento').html(dados[0].departamento);
         $('#modal-os .campo-solicitacao').html(dados[0].solicitacao);
+        $('#modal-os .campo-data-alteracao').html(dados[0].data_alteracao);
+        $('#modal-os .campo-status').val(dados[0].status);
+        $('#modal-os .campo-comentario').html(dados[0].comentario);        
         $('#modal-os').modal(
         {
            show: true       
@@ -70,7 +73,7 @@ function verificaStatus(status)
         return '<span class="label label-warning">Execução</span>';
     }else if(status=='Fechada')
     {
-        return '<span class="label label-default">Fechado</span>';
+        return '<span class="label label-default">Fechada</span>';
     }else if(status=='Nova')
     {
         return '<span class="label label-info">Nova</span>';
